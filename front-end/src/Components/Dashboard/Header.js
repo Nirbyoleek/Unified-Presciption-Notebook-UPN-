@@ -6,7 +6,8 @@ import User from "../../assets/User 2.svg";
 
 function Header() {
   const [input, setInput] = useState("");
-
+  const date = new Date().toLocaleDateString();
+  const time = new Date().toLocaleTimeString();
   return (
     <div>
       <div className="flex justify-between mb-6">
@@ -28,11 +29,11 @@ function Header() {
       <div className="flex">
         <div className="flex mx-4">
           <img src={Calendar} alt="calendar" className="w-5 mr-3" />
-          <h3>2nd April 2022</h3>
+          <h3>{date}</h3>
         </div>
         <div className="flex">
           <img src={Clock} alt="clock" className="w-5 mr-3" />
-          <h3>10 : 10 PM</h3>
+          <h3>{time}</h3>
         </div>
       </div>
     </div>

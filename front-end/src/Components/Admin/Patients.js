@@ -25,19 +25,19 @@ function Patients() {
       name: "Harry Jacksonn",
     },
     {
-      id: "4",
+      id: "5",
       name: "Harry Jacksonn",
     },
     {
-      id: "4",
+      id: "6",
       name: "Harry Jacksonn",
     },
     {
-      id: "4",
+      id: "7",
       name: "Harry Jacksonn",
     },
     {
-      id: "4",
+      id: "8",
       name: "Harry Jacksonn",
     },
   ];
@@ -55,7 +55,7 @@ function Patients() {
             <div className="w-[28vw] bg-[#75c6bc7e] mr-2 mb-5 p-2 rounded-3xl flex justify-between">
               <div className="flex  items-center">
                 <img src={User} className="w-8 mr-4" />
-                <p className="mr-20">{pat.name}</p>
+                <p className="mr-20 text-[#499189]">{pat.name}</p>
               </div>
               <div className="flex px-4 items-center ">
                 <img src={Edit} className="w-6 h-6 mr-2" />

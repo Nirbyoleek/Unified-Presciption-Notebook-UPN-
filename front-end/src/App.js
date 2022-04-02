@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./Components/Loginin";
 import LoginDoc from "./Components/LogininDoc";
 import AdminDashboard from "./Components/Admin/AdminDashboard";
+import Canvas from "./Components/canvas";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path="/login/patient" element={<Login />} />
 
           <Route path="/login/doctor" element={<LoginDoc />} />
+          
+          <Route path="/canvas" element={<Canvas />} />
 
           
           </Routes>

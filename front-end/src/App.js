@@ -1,11 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Dashboard from "./Components/Dashboard/Dashboard";
+import Signup from "./Components/Signup";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <div className="bg-black text-color">
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

@@ -5,6 +5,7 @@ const UserRouter = require("./routes/UserRoutes");
 require("./db/db")
 
 const app = express();
+
 app.use(cors());
 app.use(express.json())
 

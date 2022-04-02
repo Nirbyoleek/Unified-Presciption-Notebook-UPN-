@@ -1,13 +1,15 @@
 const res = require("express/lib/response")
 const User = require("../models/UserModel")
 
-const GetDetails = async() => {
 
+//function to get details of the user 
+const GetDetails = async(req,res) => {
     try {
-        const user = await User.find({})
+        const email = req.params.email
+        const user = await User.find({email : email})
         res.send(user)
     } catch (error) {
-        res.status(400).send({message : "Server Error"})
+        res.status(400).send({message : error})
     }
 }
 

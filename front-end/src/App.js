@@ -12,11 +12,17 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
+
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
+
           <Route path="/signup" element={<Signup />} />
+
           <Route path="/login/patient" element={<Login />} />
+
           <Route path="/login/doctor" element={<LoginDoc />} />
-        </Routes>
+
+          
+          </Routes>
       </BrowserRouter>
     </div>
   );

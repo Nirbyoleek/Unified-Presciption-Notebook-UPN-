@@ -5,6 +5,10 @@ import emailicon from "../assets/icons/email.svg";
 import user from "../assets/icons/user.svg";
 import passwordicon from "../assets/icons/password.svg";
 import showpasswordicon from "../assets/icons/showpassword.svg";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init();
 
 const Login = () => {
 
@@ -23,6 +27,7 @@ const Login = () => {
             <img src={logo} className="w-[7vw] h-[7vh]" />
           </div>
 
+          <div data-aos="zoom-in" data-aos-duration="2000" >
           <div className="px-40 pt-12 ">
           <div className="mt-12">
               <p className="text-[#23776E] font-extrabold text-4xl">Patient Login</p> 
@@ -89,7 +94,7 @@ const Login = () => {
               </strong>
             </div>
           </div>
-        </div>
+        </div></div>
 
         <div className="w-[50vw] p-4">
           <img src={SignUp} className=" w-[150vh] h-[95vh] mx-auto" />

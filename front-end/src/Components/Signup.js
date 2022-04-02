@@ -1,11 +1,19 @@
-import React from "react";
-import SignUp from "../assets/signuppatient.svg";
+import React, {useState} from "react";
+import SignUp from "../assets/signup.svg";
 import logo from "../assets/logo1.svg";
-import email from "../assets/icons/email.svg";
+import emailicon from "../assets/icons/email.svg";
 import user from "../assets/icons/user.svg";
-import password from "../assets/icons/password.svg";
+import passwordicon from "../assets/icons/password.svg";
+import showpasswordicon from "../assets/icons/showpassword.svg"
 
 const Signup = () => {
+
+  const [name,setname] = useState("")
+  const [email,setemail] = useState("")
+  const [password,setpassword] = useState("")
+  const [cpassword, setcpassword] = useState("")
+  const [show,setshow] = useState("")
+
   return (
     <div>
       <div className="flex">
@@ -14,14 +22,18 @@ const Signup = () => {
             <img src={logo} className="w-[7vw] h-[7vh]" />
           </div>
 
-          <div className="px-40 pt-24">
-            <div class="relative border-b-2 p-2 focus-within:border-[#23776E] flex">
+          <div className="px-40 pt-16">
+          <div className="">
+          <p className="text-[#23776E] font-extrabold text-4xl">Sign Up</p> 
+        </div>
+            <div class="relative border-b-2 p-2 focus-within:border-[#23776E] flex mt-8">
               <input
                 type="text"
                 name="name"
                 placeholder=" "
                 class="block w-full appearance-none focus:outline-none  bg-transparent"
-                autoComplete="false"
+                autoComplete="off"
+                onChange={()=>{setname(name)}}
               />
               <label
                 for="name"
@@ -40,7 +52,8 @@ const Signup = () => {
                 name="name"
                 placeholder=" "
                 class="block w-full appearance-none focus:outline-none  bg-transparent"
-                autoComplete="false"
+                autoComplete="off"
+                onChange={()=>{setemail(email)}}
               />
               <label
                 for="name"
@@ -48,18 +61,19 @@ const Signup = () => {
               >
                 E-Mail
               </label>
-              <img src={email} />
+              <img src={emailicon} />
             </div>
           </div>
 
           <div className="px-40 pt-12 ">
             <div class="relative border-b-2 p-2 focus-within:border-[#23776E] flex">
               <input
-                type="text"
+                type={show ? "text" : "password"}
                 name="name"
                 placeholder=" "
                 class="block w-full appearance-none focus:outline-none  bg-transparent"
-                autoComplete="false"
+                autoComplete="off"
+                onChange={()=>{setpassword(password)}}
               />
               <label
                 for="name"
@@ -67,18 +81,19 @@ const Signup = () => {
               >
                 Password
               </label>
-              <img src={password} />
+              <img src={show ? showpasswordicon : passwordicon} onChange={()=>{show ? setshow(false) : setshow(true)}}/>
             </div>
           </div>
 
           <div className="px-40 pt-12 ">
             <div class="relative border-b-2 p-2 focus-within:border-[#23776E] flex">
               <input
-                type="text"
+              type={show ? "text" : "password"}
                 name="name"
                 placeholder=" "
                 class="block w-full appearance-none focus:outline-none  bg-transparent"
-                autoComplete="false"
+                autoComplete="off"
+                onChange={()=>{setcpassword(cpassword)}}
               />
               <label
                 for="name"
@@ -86,18 +101,18 @@ const Signup = () => {
               >
                 Confirm Password
               </label>
-              <img src={password} />
+              <img src={show ? showpasswordicon : passwordicon} onChange={()=>{show ? setshow(false) : setshow(true)}} />
             </div>
           </div>
 
           <div className="px-40 pt-12 ">
             <button className="bg-[#23776E] rounded-sm">
-              <p className="text-white py-4 w-[30vw]">Sign Up</p>
+              <p className="text-white py-4 w-[30vw]">Login</p>
             </button>
             <div className="justify-center mt-4 text-sm flex">
               <p className="mr-1">Already have an account? </p>
               <strong>
-                <a href="/login" className="text-[#23776E]">
+                <a href="/login/patient" className="text-[#23776E]">
                   Login
                 </a>
               </strong>

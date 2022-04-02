@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./Components/Loginin";
 import LoginDoc from "./Components/LogininDoc";
 import AdminDashboard from "./Components/Admin/AdminDashboard";
-import Canvas from "./Components/canvas";
+import Canvas from "./Components/Admin/Canvas";
 
 function App() {
   return (

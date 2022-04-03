@@ -75,7 +75,6 @@ def adddata():
 def addpath():
     email = request.form['email']
     path = request.form['path']
-    doc_name = request.form['doc_name']
     
     user = user_db.find_one({'email': email})
     if user:

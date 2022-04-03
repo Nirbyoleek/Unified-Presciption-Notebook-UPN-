@@ -1,17 +1,21 @@
 
 from tabnanny import check
 from flask import Flask, request, jsonify
+from flask_cors import CORS
+
 import pymongo
 from dotenv import load_dotenv
 import os
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app)
 
 client = pymongo.MongoClient(os.environ['MONGODB'])
 
 user_db = client.Users.users
 
+# Add CORS support
 
 def check_db():
     try:
@@ -47,9 +51,20 @@ def login():
     return jsonify({'success': False})
 
 
+@app.route('/search', methods=['POST'])
+def search():
+    name = request.form['name']
+    user = list(i['name'] for i in user_db.find({'name': { '$regex': ".*{}.*".format(name)}}, {'name':1}))
+    if user is None:
+        return jsonify({'success': False})
+    return jsonify({'success': True, 'user': user})
+
+
+
 @app.route('/')
 def index():
     return "Hello World!"
 
 
-app.run(host='127.0.0.1', port=5000, debug=True)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)

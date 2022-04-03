@@ -15,10 +15,11 @@ const LoginAdmin = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [show, setshow] = useState(false);
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     const signUpData = new FormData();
+    localStorage.setItem('demail',email)
     console.log(email, password);
     signUpData.append("email", email);
     signUpData.append("password", password);

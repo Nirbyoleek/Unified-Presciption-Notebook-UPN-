@@ -16,7 +16,7 @@ function App() {
 
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
 
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/" element={<Signup />} />
 
           <Route path="/login/patient" element={<Login />} />
 

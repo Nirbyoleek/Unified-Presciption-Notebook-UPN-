@@ -9,13 +9,16 @@ function Header() {
   const [input, setInput] = useState("");
   const date = new Date().toLocaleDateString();
   var [time, setTime] = useState(new Date());
-
+  const email = localStorage.getItem('email')
   useEffect(() => {
     var timer = setInterval(() => setTime(new Date()), 1000);
     return function cleanup() {
       clearInterval(timer);
     };
   });
+  if(!localStorage.getItem("email")){
+    window.location.href="/login/patient";
+  }
   return (
     <motion.div
       initial={{ y: -20, opacity: 0 }}
@@ -46,7 +49,10 @@ function Header() {
           className="flex justify-center items-center"
         >
           <img className="mr-3 w-8" alt="User" src={User} />
-          <h2 className="font-bold">Bruh Singh</h2>
+          <h2 className="font-bold">{email}</h2>
+          <button className="p-2 px-4 ml-2 bg-[#23776E] text-white rounded-lg" onClick={()=>{
+            localStorage.removeItem('email')
+          }}>Sign Out</button>
         </motion.div>
       </div>
       <div className="flex">

@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 import logo1 from "../../assets/logo1.svg";
 import { ColorPicker, useColor } from "react-color-palette";
+import emailicon from "../../assets/icons/email.svg"
 import "react-color-palette/lib/css/styles.css";
 import axios from "axios";
 const styles = {
@@ -19,6 +20,7 @@ const Canvas = () => {
   const presData = new FormData();
   presData.append("email", email);
   presData.append("path", prescription);
+  
 
   const exportImage = () => {
     thiscanvas.current
@@ -39,14 +41,18 @@ const Canvas = () => {
     })
       .then((response) => {
         console.log(response);
+        window.location.href="/admin/dashboard"
       })
       .catch((err) => console.log(err));
   };
 
   return (
     <div className="bg-[#E5FFFE]">
-      <img src={logo1} className="p-4" />
+      <img src={logo1} className="p-4" onClick={()=>{
+        window.location.href="/dashboard"
+      }}/>
       <div className="h-[100vh] w-[80vw] m-auto mt-4 overflow ">
+        
         <div className="flex">
           <div className="h-[100vh] w-[80vw] m-2">
             <ReactSketchCanvas

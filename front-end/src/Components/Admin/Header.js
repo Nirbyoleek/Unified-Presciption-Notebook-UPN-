@@ -8,7 +8,7 @@ function Header() {
   const [input, setInput] = useState("");
   const date = new Date().toLocaleDateString();
   var [time,setTime] = useState(new Date());
-
+  const email = localStorage.getItem('email')
   useEffect(() => {
     var timer = setInterval(()=>setTime(new Date()), 1000 )
     return function cleanup() {
@@ -16,6 +16,9 @@ function Header() {
     }
 
 });
+if(!localStorage.getItem("email")){
+  window.location.href="/login/admin";
+}
   return (
     <div>
       <div className="flex justify-between mb-6">
@@ -24,6 +27,9 @@ function Header() {
         <div className="flex ml-auto ">
           <img className="mr-3 w-8" alt="User" src={User} />
           <h2 className="font-bold">Bruh Singh</h2>
+          <button className="p-2 px-4 ml-2 bg-[#23776E] text-white rounded-lg" onClick={()=>{
+            localStorage.removeItem('email')
+          }}>Sign Out</button>
         </div>
       </div>
       <div className="flex">

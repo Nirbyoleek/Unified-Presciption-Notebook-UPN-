@@ -165,7 +165,7 @@ const Signup = () => {
                 <p className="mr-1">Already have an account? </p>
                 <strong>
                   <a href="/login/patient" className="text-[#23776E]">
-                    Login
+                    Sign Up
                   </a>
                 </strong>
               </div>

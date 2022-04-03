@@ -79,7 +79,7 @@ def addpath():
     
     user = user_db.find_one({'email': email})
     if user:
-        user_db.update_one({'email': email}, {'$push': {'path': (path, doc_name)}})
+        user_db.update_one({'email': email}, {'$push': {'path': path}})
         return jsonify({'message': 'Path added'}), 200
     else:
         return jsonify({'message': 'User not found'}), 400

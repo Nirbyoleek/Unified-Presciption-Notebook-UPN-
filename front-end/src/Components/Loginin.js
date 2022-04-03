@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SignUp from "../assets/signup.svg";
 import logo from "../assets/logo1.svg";
 import emailicon from "../assets/icons/email.svg";
-import user from "../assets/icons/user.svg";
+
 import passwordicon from "../assets/icons/password.svg";
 import showpasswordicon from "../assets/icons/showpassword.svg";
 import AOS from "aos";
@@ -16,6 +16,7 @@ const Login = () => {
   const [password, setpassword] = useState("");
   const [show, setshow] = useState(false);
 
+  localStorage.setItem("email", email);
   const handleSubmit = (e) => {
     e.preventDefault();
     const signUpData = new FormData();
@@ -30,10 +31,12 @@ const Login = () => {
       data: signUpData,
     })
       .then((response) => {
-        console.log(response);
-        // if (response.data.code === 200) {
-        //   setToken(true);
-        // }
+        console.log(response.data);
+        if (response.data.success) {
+          window.location.href = "/dashboard";
+        } else {
+          alert("Wrong Credentials");
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -128,9 +131,9 @@ const Login = () => {
                 </strong>
               </div>
               <div className="justify-center mt-4 text-sm flex">
-                <p className="mr-1">Are you a doctor? </p>
+                <p className="mr-1">Are you Admin? </p>
                 <strong>
-                  <a href="/login/doctor" className="text-[#23776E]">
+                  <a href="/login/admin" className="text-[#23776E]">
                     Login Here
                   </a>
                 </strong>

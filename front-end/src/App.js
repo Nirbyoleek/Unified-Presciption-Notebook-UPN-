@@ -20,12 +20,10 @@ function App() {
 
           <Route path="/login/patient" element={<Login />} />
 
-          <Route path="/login/doctor" element={<LoginDoc />} />
-          
-          <Route path="/canvas" element={<Canvas />} />
+          <Route path="/login/admin" element={<LoginDoc />} />
 
-          
-          </Routes>
+          <Route path="/canvas" element={<Canvas />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );

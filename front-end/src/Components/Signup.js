@@ -33,9 +33,12 @@ const Signup = () => {
     })
       .then((response) => {
         console.log(response);
-        // if (response.data.code === 200) {
-        //   setToken(true);
-        // }
+        console.log(response.data);
+        if (response.data.success) {
+          window.location.href = "/dashboard";
+        } else {
+          alert("Wrong");
+        }
       })
       .catch((err) => {
         console.log(err);

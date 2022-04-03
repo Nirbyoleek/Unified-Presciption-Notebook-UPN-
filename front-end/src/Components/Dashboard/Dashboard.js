@@ -20,10 +20,26 @@ function Dashboard() {
     <div className="flex">
       {/* SIDEBAR */}
       <div className="bg-[#499189] h-screen w-56 px-4 py-5">
-        <div className="mb-36">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            delay: 1,
+
+            default: { duration: 1 },
+          }}
+          className="mb-36"
+        >
           <img src={Logo} alt="Logo" className="w-36 mx-auto" />
-        </div>
-        <div className="px-2 flex flex-col justify-center">
+        </motion.div>
+        <motion.div
+          initial={{ x: -30, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{
+            default: { duration: 1.5 },
+          }}
+          className="px-2 flex flex-col justify-center"
+        >
           <div
             className={
               homeActive
@@ -69,7 +85,7 @@ function Dashboard() {
             <img src={Doctor} alt="Doctors" className="mr-4" />
             <h6 className="text-white">My Doctors</h6>
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className="bg-[#E5FFFE] w-[83.5vw] px-8 py-5">
         {/* HEADER */}

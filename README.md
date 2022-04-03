@@ -11,7 +11,7 @@ The aim is to make the workspace digital, to get rid of unnecessary paperwork, m
 Insert gif or link to demo
 
 ## Features
-![Why_UPN](http://url/to/img.png)
+![Why_UPN](https://user-images.githubusercontent.com/73571091/161418506-eaf530bc-05c7-42a2-80fc-df3ff3e84b1c.png)
 
 
 ## Deployment

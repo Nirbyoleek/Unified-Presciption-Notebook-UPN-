@@ -1,23 +1,29 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Calendar from "../../assets/calendar.svg";
 import Clock from "../../assets/clock.svg";
 import Search from "../../assets/search.svg";
 import User from "../../assets/User 2.svg";
+import { motion } from "framer-motion";
 
 function Header() {
   const [input, setInput] = useState("");
   const date = new Date().toLocaleDateString();
-  var [time,setTime] = useState(new Date());
+  var [time, setTime] = useState(new Date());
 
   useEffect(() => {
-    var timer = setInterval(()=>setTime(new Date()), 1000 )
+    var timer = setInterval(() => setTime(new Date()), 1000);
     return function cleanup() {
-        clearInterval(timer)
-    }
-
-});
+      clearInterval(timer);
+    };
+  });
   return (
-    <div>
+    <motion.div
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{
+        default: { duration: 1 },
+      }}
+    >
       <div className="flex justify-between mb-6">
         <div class="relative px-4 py-2 bg-[#499189]  rounded-2xl flex justify-center w-[25vw]">
           <img src={Search} alt="search" className="h-5 mr-2" />
@@ -29,10 +35,19 @@ function Header() {
           />
         </div>
 
-        <div className="flex justify-center items-center">
+        <motion.div
+          initial={{ x: 30 }}
+          animate={{ x: 0 }}
+          transition={{
+            delay: 1,
+
+            default: { duration: 2 },
+          }}
+          className="flex justify-center items-center"
+        >
           <img className="mr-3 w-8" alt="User" src={User} />
           <h2 className="font-bold">Bruh Singh</h2>
-        </div>
+        </motion.div>
       </div>
       <div className="flex">
         <div className="flex mx-4">
@@ -44,7 +59,7 @@ function Header() {
           <h3>{time.toLocaleTimeString()}</h3>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -2,12 +2,11 @@ import React, { useState } from "react";
 
 import Patients from "./Patients";
 
-import Logo from "../../assets/logo.svg";
+import Logo from "../../assets/logoadmin.svg";
 import HomeLogo from "../../assets/Home.svg";
 import PrescriptionLogo from "../../assets/Prescription.svg";
 import Doctor from "../../assets/doctor.svg";
-
-import Header from "../Dashboard/Header";
+import Header from "./Header";
 
 import Home from "../Dashboard/Home";
 import Prescription from "../Dashboard/Prescription";

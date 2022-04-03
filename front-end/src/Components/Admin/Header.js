@@ -1,7 +1,7 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Calendar from "../../assets/calendar.svg";
 import Clock from "../../assets/clock.svg";
-import Search from "../../assets/search.svg";
+
 import User from "../../assets/User 2.svg";
 
 function Header() {
@@ -19,17 +19,9 @@ function Header() {
   return (
     <div>
       <div className="flex justify-between mb-6">
-        <div class="relative px-4 py-2 bg-[#499189]  rounded-2xl flex justify-center w-[25vw]">
-          <img src={Search} alt="search" className="h-5 mr-2" />
-          <input
-            type="text"
-            name="name"
-            onChange={(e) => setInput(e.target.value)}
-            className="block w-full appearance-none rounded-xl text-white bg-[#499189] focus:outline-none"
-          />
-        </div>
+        
 
-        <div className="flex justify-center items-center">
+        <div className="flex ml-auto ">
           <img className="mr-3 w-8" alt="User" src={User} />
           <h2 className="font-bold">Bruh Singh</h2>
         </div>

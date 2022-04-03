@@ -74,7 +74,7 @@ def adddata():
 @app.route('/addpath', methods=['POST'])
 def addpath():
     email = request.form['email']
-    path = list(request.form['path'])
+    path = request.form['path']
     user = user_db.find_one({'email': email})
     if user:
         user_db.update_one({'email': email}, {'$push': {'path': path}})

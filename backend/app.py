@@ -75,9 +75,11 @@ def adddata():
 def addpath():
     email = request.form['email']
     path = request.form['path']
+    doc_name = request.form['doc_name']
+    
     user = user_db.find_one({'email': email})
     if user:
-        user_db.update_one({'email': email}, {'$push': {'path': path}})
+        user_db.update_one({'email': email}, {'$push': {'path': (path, doc_name)}})
         return jsonify({'message': 'Path added'}), 200
     else:
         return jsonify({'message': 'User not found'}), 400
@@ -90,28 +92,6 @@ def getpath():
         return jsonify({'message': 'User found', 'path': user.get('path', [])}), 200
     else:
         return jsonify({'message': 'User not found'}), 400
-
-
-@app.route('/adddocs', methods=['POST'])
-def adddocs():
-    email = request.form['email']
-    docs = list(request.form['docs'])
-    user = user_db.find_one({'email': email})
-    if user:
-        user_db.update_one({'email': email}, {'$set': {'docs': docs}})
-        return jsonify({'message': 'docs added'}), 200
-    else:
-        return jsonify({'message': 'User not found'}), 400
-
-@app.route('/getdocs', methods=['POST'])
-def getdocs():
-    email = request.form['email']
-    user = user_db.find_one({'email': email})
-    if user:
-        return jsonify({'message': 'User found', 'docs': user.get('docs', [])}), 200
-    else:
-        return jsonify({'message': 'User not found'}), 400
-
 
 
 @app.route('/login', methods=['POST'])

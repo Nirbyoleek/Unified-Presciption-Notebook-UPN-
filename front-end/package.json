@@ -7,6 +7,8 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
+    "axios": "^0.26.1",
+    "framer-motion": "^6.2.8",
     "react": "^18.0.0",
     "react-color-palette": "^6.2.0",
     "react-dom": "^18.0.0",

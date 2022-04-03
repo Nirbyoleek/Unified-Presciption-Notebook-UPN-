@@ -10,6 +10,7 @@ import DoctorDetails from "./DoctorDetails";
 import Patients from "../Admin/Patients";
 import Home from "./Home";
 import Prescription from "./Prescription";
+import { motion } from "framer-motion";
 
 function Dashboard() {
   const [homeActive, setHomeActive] = useState(true);

@@ -37,11 +37,11 @@ function Header() {
       <div className="flex">
         <div className="flex mx-4">
           <img src={Calendar} alt="calendar" className="w-5 mr-3" />
-          <h3>{date}</h3>
+          <h3 className="font-extrabold text-[#23776E]">{date}</h3>
         </div>
         <div className="flex">
           <img src={Clock} alt="clock" className="w-5 mr-3" />
-          <h3>{time.toLocaleTimeString()}</h3>
+          <h3 className="font-extrabold text-[#23776E]">{time.toLocaleTimeString()}</h3>
         </div>
       </div>
     </div>

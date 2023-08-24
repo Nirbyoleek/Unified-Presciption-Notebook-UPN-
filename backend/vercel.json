@@ -1,17 +1,13 @@
 {
   "functions": {
-    "api/**/*.py": {
-      "runtime": "vercel-python@0.1.0"
+    "api": {
+      "includeFiles": "/*.py"
     }
   },
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/"
+      "dest": "/api/$1"
     }
   ]
 }
